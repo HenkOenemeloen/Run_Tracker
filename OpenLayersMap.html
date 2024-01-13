@@ -38,10 +38,10 @@
 			map.addLayer(layerMarkers);
 
 			// Add the Layer with the GPX Track
-			var lgpx = new OpenLayers.Layer.Vector("Lakeside cycle ride", {
+			var lgpx = new OpenLayers.Layer.Vector("Running in Enschede", {
 				strategies: [new OpenLayers.Strategy.Fixed()],
 				protocol: new OpenLayers.Protocol.HTTP({
-					url: "around_lake.gpx",
+					url: "namiddagloop.gpx",
 					format: new OpenLayers.Format.GPX()
 				}),
 				style: {strokeColor: "red", strokeWidth: 5, strokeOpacity: 0.9},
