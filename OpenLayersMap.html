@@ -55,12 +55,12 @@
 			var lgpx = new OpenLayers.Layer.Vector("Running in Enschede", {
 				strategies: [new OpenLayers.Strategy.Fixed()],
 				protocol: new OpenLayers.Protocol.HTTP({
-					url: "https://www.topografix.com/fells_loop.gpx",
+					url: "https://raw.githubusercontent.com/HenkOenemeloen/Run_Tracker/main/Namiddagloop.gpx",
 					format: new OpenLayers.Format.GPX()
 				}),
 				style: {strokeColor: "red", strokeWidth: 5, strokeOpacity: 0.9},
 				projection: new OpenLayers.Projection("EPSG:4326")
-			});
+			})
 			map.addLayer(lgpx);
 		}
 	</script>
