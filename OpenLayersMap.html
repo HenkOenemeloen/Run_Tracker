@@ -37,18 +37,6 @@
 			layerMarkers = new OpenLayers.Layer.Markers("Markers");
 			map.addLayer(layerMarkers);
 
-			// Add the Layer with the GPX Track
-			var lgpx = new OpenLayers.Layer.Vector("Running in Enschede", {
-				strategies: [new OpenLayers.Strategy.Fixed()],
-				protocol: new OpenLayers.Protocol.HTTP({
-					url: "https://raw.githubusercontent.com/HenkOenemeloen/Run_Tracker/main/Namiddagloop.gpx",
-					format: new OpenLayers.Format.GPX()
-				}),
-				style: {strokeColor: "red", strokeWidth: 5, strokeOpacity: 0.9},
-				projection: new OpenLayers.Projection("EPSG:4326")
-			});
-			map.addLayer(lgpx);
-
 			// Start position for the map (hardcoded here for simplicity,
 			// but maybe you want to get this from the URL params)
 			var lat=52.2206;
@@ -62,6 +50,18 @@
 			var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
 			var icon = new OpenLayers.Icon('https://www.openstreetmap.org/openlayers/img/marker.png',size,offset);
 			layerMarkers.addMarker(new OpenLayers.Marker(lonLat,icon));
+
+			// Add the Layer with the GPX Track
+			var lgpx = new OpenLayers.Layer.Vector("Running in Enschede", {
+				strategies: [new OpenLayers.Strategy.Fixed()],
+				protocol: new OpenLayers.Protocol.HTTP({
+					url: "https://raw.githubusercontent.com/HenkOenemeloen/Run_Tracker/main/Namiddagloop.gpx",
+					format: new OpenLayers.Format.GPX()
+				}),
+				style: {strokeColor: "red", strokeWidth: 5, strokeOpacity: 0.9},
+				projection: new OpenLayers.Projection("EPSG:4326")
+			});
+			map.addLayer(lgpx);
 		}
 	</script>
 
